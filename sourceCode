@@ -1,0 +1,72 @@
+// Some of the ingredients that his recipes require are measured in cups. When he
+// goes to the grocery store to buy those ingredients, however, they are sold only by the fluid ounce
+
+
+//Write a program that converts cups to fluid ounces
+
+// Tasks
+//1. get the number of cups from the user
+//2. Convert the number of cups to fluid ounces
+//3. Display the result
+
+
+import java.io.*;
+import java.util.Scanner;
+import javax.swing.*;
+
+
+
+public class getCups
+{
+
+    /**
+     *  getCupsFromUser method is to get the number of cups from user.
+     *  The method will tell the user to enter the amount of cups.
+     * @return the number of cups entered from the user
+     */
+    public static double getCupsFromUser()
+    {
+
+        String input;
+        double numOfCups;
+                input = JOptionPane.showInputDialog("Enter the number of cups you would like to convert\n" +
+                        "to fluid ounces");
+
+                // This converts the input(String) to a double return type
+                numOfCups = Double.parseDouble(input);
+
+               // returns the number of cups enter by the user to the method
+                return numOfCups;
+
+    }
+
+    /**
+     * convertCupToFLuid method will convert the cups enter by the user to fluid ounces
+     * the conversion is 1 cup = 8 fluid ounces
+     * @return the total in fluid ounces converted from cups
+     */
+    public static double convertCupToFluid(double numOfCups)
+    {
+        double fluidTotal;
+        fluidTotal = numOfCups * 8;
+        return fluidTotal;
+
+
+    }
+
+
+    public static void main(String[] args)
+    {
+double cups = getCupsFromUser(); // get the cups from te getCupsFromUser method
+
+        // Pull the amount of cups from the getCupsFromUSer method (cups) into convertCupToFluid method
+        // Then transfer that conversion to fluidConversion variable
+        double fluidConversion = convertCupToFluid(cups);
+
+
+        JOptionPane.showMessageDialog(null, " The number of " + cups +
+                " cups will be converted to fluid ounces will be " + fluidConversion + " FL OZ");
+
+
+    }
+}
